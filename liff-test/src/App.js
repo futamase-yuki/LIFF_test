@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useLiff from './hooks/useLiff';
 
 // LIFF IDを設定(後述)
@@ -6,6 +6,8 @@ const liffId = '2006770067-9yLG6E0P';
 
 function App() {
   const { loading, error, profile, fetchProfile, sendMessage } = useLiff({ liffId });
+  const [toushi, setToushi] = useState('');
+  const [kaisyu, setKaisyu] = useState('');
   const [syushi, setSyushi] = useState('');
 
   const handleInputChange = (e) => {

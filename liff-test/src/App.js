@@ -22,7 +22,7 @@ function App() {
   };
 
   const modifySendMessage = () => {
-    return "投資: ${toushi}\n 回収: ${kaisyu}\n 収支: ${syushi}";
+    return `投資: ${toushi}\n 回収: ${kaisyu}\n 収支: ${syushi}`;
   }
 
   if (loading) return <p>...loading</p>;

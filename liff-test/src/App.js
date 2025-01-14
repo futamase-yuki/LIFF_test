@@ -21,6 +21,10 @@ function App() {
     }
   };
 
+  const modifySendMessage = () => {
+    return "投資: ${toushi}\n 回収: ${kaisyu}\n 収支: ${syushi}";
+  }
+
   if (loading) return <p>...loading</p>;
   if (error) return <p>{error.message}</p>;
 
@@ -29,7 +33,7 @@ function App() {
       {/* 追加 */}
       <section>
         {/* ボタンをクリックしたらfetchProfileを実行 */}
-        <button onClick={() => sendMessage({ text })}>投稿</button>
+        <button onClick={() => modifySendMessage()}>投稿</button>
         {/* 取得したProfileを表示 */}
         {profile && (
           <div>

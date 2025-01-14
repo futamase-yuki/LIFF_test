@@ -33,12 +33,27 @@ function useLiff({ liffId }) {
     }
   };
 
+  // 送信する内容を引数で受け取る
+  const sendMessage = async ({ text }) => {
+    setLoading(true);
+    try {
+      // LIFF APIのsendMessagesを実行
+      liff.sendMessages([{ type: 'text', text }]);
+      console.log(`success send message: ${text}`);
+    } catch (error) {
+      console.log({ error });
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   // useLiffが呼ばれたらinitialize処理を実行する
   useEffect(() => {
     initLiff({ liffId });
   }, [liffId]);
 
-  return { loading, error };
+  return { loading, error, fetchProfile, profile, sendMessage };
 }
 
 export default useLiff;

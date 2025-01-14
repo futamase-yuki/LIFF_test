@@ -5,14 +5,36 @@ import useLiff from './hooks/useLiff';
 const liffId = '2006770067-9yLG6E0P';
 
 function App() {
-  const { loading, error } = useLiff({ liffId });
+  const { loading, error, profile, fetchProfile, sendMessage } = useLiff({ liffId });
+  const [syushi, setSyushi] = useState('');
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === 'toushi') {
+      setToushi(value);
+    } else if (name === 'kaisyu') {
+      setKaisyu(value);
+    } else if (name === 'syushi') {
+      setSyushi(value);
+    }
+  };
 
   if (loading) return <p>...loading</p>;
   if (error) return <p>{error.message}</p>;
 
   return (
     <div>
-      <h1>Hello LIFF</h1>
+      {/* 追加 */}
+      <section>
+        {/* ボタンをクリックしたらfetchProfileを実行 */}
+        <button onClick={() => sendMessage({ text })}>投稿</button>
+        {/* 取得したProfileを表示 */}
+        {profile && (
+          <div>
+            <p>DisplayName: {profile.displayName}</p>
+          </div>
+        )}
+      </section>
     </div>
   );
 }

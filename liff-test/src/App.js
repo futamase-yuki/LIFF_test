@@ -33,7 +33,7 @@ function App() {
       {/* 追加 */}
       <section>
         {/* ボタンをクリックしたらfetchProfileを実行 */}
-        <button onClick={() => sendMessage("test")}>投稿</button>
+        <button onClick={() => sendMessage({ text: "Hello World!" })}>投稿</button>
         {/* 取得したProfileを表示 */}
         {profile && (
           <div>

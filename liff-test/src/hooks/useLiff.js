@@ -11,7 +11,6 @@ function useLiff({ liffId }) {
     try {
       // LIFF APIのinitを呼び出して初期化
       await liff.init({ liffId });
-      alert('success liff init');
     } catch (error) {
       alert({ error });
       setError(error);

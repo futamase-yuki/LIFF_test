@@ -74,12 +74,7 @@ function App() {
             </div>
             <p></p>
             <button type="submit" class="btn btn-primary" onClick={() => onClickSubmitButton() }>投稿</button>
-        {/* 取得したProfileを表示 */}
-        {profile && (
-          <div>
-            <p>DisplayName: {profile.displayName}</p>
-          </div>
-        )}
+        {/* 取得したProfileを表示 profile.displayNameで取得*/}
       </section>
     </div>
   );

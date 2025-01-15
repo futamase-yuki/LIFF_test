@@ -19,6 +19,10 @@ function useLiff({ liffId }) {
     }
   };
 
+  const exitLiff = () => {
+    liff.closeWindow();
+  }
+
   const fetchProfile = async () => {
     setLoading(true);
     try {
@@ -52,7 +56,7 @@ function useLiff({ liffId }) {
     initLiff({ liffId });
   }, [liffId]);
 
-  return { loading, error, fetchProfile, profile, sendMessage };
+  return { exitLiff, loading, error, fetchProfile, profile, sendMessage };
 }
 
 export default useLiff;

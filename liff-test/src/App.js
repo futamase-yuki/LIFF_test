@@ -5,7 +5,7 @@ import useLiff from './hooks/useLiff';
 const liffId = '2006770067-9yLG6E0P';
 
 function App() {
-  const { loading, error, profile, fetchProfile, sendMessage } = useLiff({ liffId });
+  const { exitLiff, loading, error, profile, fetchProfile, sendMessage } = useLiff({ liffId });
   const [machine, setMachine] = useState('');
   const [toushi, setToushi] = useState('');
   const [kaisyu, setKaisyu] = useState('');
@@ -34,6 +34,11 @@ function App() {
     }
   }
 
+  const onClickSubmitButton = () => {
+    sendMessage({ text: modifySendMessage() });
+    exitLiff();
+  }
+
   if (loading) return <p>...loading</p>;
   if (error) return <p>{error.message}</p>;
 
@@ -44,7 +49,7 @@ function App() {
         {/* ボタンをクリックしたらfetchProfileを実行 */}
             <p class="mt-3">機種</p>
             <div>
-                <input class="form-control w-100 mt-1" name="machine" placeholder="" required onChange={handleInputChange}/>
+                <input class="form-control w-100 mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
             </div>
             <p class="mt-3">投資</p>
             <div>
@@ -58,7 +63,7 @@ function App() {
             <div>
                 <input class="form-control w-100 mt-1" name="syushi" required onChange={handleInputChange}/>
             </div>
-        <button onClick={() => sendMessage({ text: modifySendMessage() })}>投稿</button>
+            <button type="submit" class="btn btn-primary" onClick={() => onClickSubmitButton() }>投稿</button>
         {/* 取得したProfileを表示 */}
         {profile && (
           <div>

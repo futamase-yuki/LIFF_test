@@ -83,10 +83,10 @@ function App() {
 
             <div class="form-row align-items-center">
               <label class="form-group col-2">収支</label>
-              <div class="form-group col-6">
+              <div class="form-group col-7">
                 <input class="form-control mt-1" type="number" name="syushi" required onChange={handleInputChange}/>
               </div>
-              <div class="form-group col-4">
+              <div class="form-group col-3">
                 <select id="inputState" class="form-control mt-1">
                   <option selected>円</option>
                   <option>枚</option>

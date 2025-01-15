@@ -28,7 +28,7 @@ function App() {
     const isNegative = result < 0;
     const absoluteValue = Math.abs(result);
     const formattedAbsoluteValue = absoluteValue.toLocaleString('en-US', {
-      minimumIntegerDigits: isNegative ? 4 : 5, // マイナス用には一桁少なくする
+      minimumIntegerDigits: isNegative ? 5 : 6, // マイナス用には一桁少なくする
       useGrouping: false,
     });
   
@@ -43,10 +43,10 @@ function App() {
   const modifySendMessage = () => {
     // もし machine が空でないなら、machine の値を含める
     if (machine) {
-      return `機種: ${machine}\n投資:${formatResult(toushi)}\n回収:${formatResult(kaisyu)}\n収支:${formatResult(syushi)}`;
+      return `機種: ${machine}\n投資:  ${formatResult(toushi)}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
     }
     else {
-      return `投資: ${formatResult(toushi)}\n回収: ${formatResult(kaisyu)}\n収支: ${formatResult(syushi)}`;
+      return `投資:  ${formatResult(toushi)}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
     }
   }
 

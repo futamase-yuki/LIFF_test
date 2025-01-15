@@ -48,10 +48,10 @@ function App() {
       <section>
             <p class="mt-3">機種</p>
             <div class="form-row">
-              <div class="form-group col-2">
+              <div class="form-group col-6">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
-              <div class="form-group col-1">
+              <div class="form-group col-2">
                 <select id="inputState" class="form-control mt-1">
                   <option selected>円</option>
                   <option>枚</option>
@@ -59,11 +59,13 @@ function App() {
                 </select>
               </div>
             </div>
-            {/* <p class="mt-3">投資</p>
-            <div>
-                <input class="form-control w-100 mt-1" name="toushi" required onChange={handleInputChange}/>
+            <p class="mt-3">投資</p>
+            <div class="form-row">
+              <div class="form-group col-6">
+                  <input class="form-control mt-1" name="toushi" required onChange={handleInputChange}/>
+              </div>
             </div>
-            <p class="mt-3">回収</p>
+            {/* <p class="mt-3">回収</p>
             <div>
                 <input class="form-control w-100 mt-1" name="kaisyu" required onChange={handleInputChange}/>
             </div>

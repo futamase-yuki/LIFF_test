@@ -47,14 +47,18 @@ function App() {
       {/* 追加 */}
       <section>
         {/* ボタンをクリックしたらfetchProfileを実行 */}
-            <p class="form-row">機種</p>
-            <div class="form-group col-md-6">
+            <p class="mt-3">機種</p>
+            <div class="form-row">
+              <div class="form-group col-md-6">
                 <input class="form-control w-100 mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
+              </div>
+              <div class="form-group col-md-6">
                 <select id="inputState" class="form-control">
                   <option selected>円</option>
                   <option>枚</option>
                   <option>玉</option>
                 </select>
+              </div>
             </div>
             <p class="mt-3">投資</p>
             <div>
@@ -68,6 +72,7 @@ function App() {
             <div>
                 <input class="form-control w-100 mt-1" name="syushi" required onChange={handleInputChange}/>
             </div>
+            <p></p>
             <button type="submit" class="btn btn-primary" onClick={() => onClickSubmitButton() }>投稿</button>
         {/* 取得したProfileを表示 */}
         {profile && (

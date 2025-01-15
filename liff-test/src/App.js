@@ -124,7 +124,7 @@ function App() {
             <p></p>
             <button type="submit" class="btn btn-primary pull-right" onClick={() => onClickSubmitButton() }>投稿</button>
       </section>
-    </div>
+    </form>
   );
 }
 

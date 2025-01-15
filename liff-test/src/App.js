@@ -34,8 +34,8 @@ function App() {
     }
   }
 
-  const onClickSubmitButton = () => {
-    sendMessage({ text: modifySendMessage() });
+  const onClickSubmitButton = async () => {
+    await sendMessage({ text: modifySendMessage() });
     exitLiff();
   }
 
@@ -47,9 +47,14 @@ function App() {
       {/* 追加 */}
       <section>
         {/* ボタンをクリックしたらfetchProfileを実行 */}
-            <p class="mt-3">機種</p>
-            <div>
+            <p class="form-row">機種</p>
+            <div class="form-group col-md-6">
                 <input class="form-control w-100 mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
+                <select id="inputState" class="form-control">
+                  <option selected>円</option>
+                  <option>枚</option>
+                  <option>玉</option>
+                </select>
             </div>
             <p class="mt-3">投資</p>
             <div>

@@ -41,7 +41,7 @@ function useLiff({ liffId }) {
     setLoading(true);
     try {
       // LIFF APIのsendMessagesを実行
-      liff.sendMessages([{ type: 'text', text }]);
+      await liff.sendMessages([{ type: 'text', text }]);
       console.log(`success send message: ${text}`);
     } catch (error) {
       console.log({ error });

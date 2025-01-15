@@ -49,14 +49,14 @@ function App() {
             <p>機種</p>
             <div class="form-row">
               <div class="form-group col-8">
-                <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
+                <input class="form-control mt-0" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
             </div>
 
             <p class="mt-1">投資</p>
             <div class="form-row">
               <div class="form-group col-8">
-                  <input class="form-control mt-1" name="toushi" required onChange={handleInputChange}/>
+                  <input class="form-control mt-0" name="toushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
                 <select id="inputState" class="form-control mt-1">

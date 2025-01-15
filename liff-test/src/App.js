@@ -62,7 +62,7 @@ function App() {
     <div>
       <section>
             <div class="form-row align-items-center">
-              <label class="form-group col-2">機種</label>
+              <label class="form-group col-4">機種(任意)</label>
               <div class="form-group col-8">
                 <input class="form-control mt-0" type="text" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
@@ -75,7 +75,7 @@ function App() {
               </div>
               <div class="form-group col-3">
                 <select id="inputState" class="form-control mt-0">
-                  <option selected>円</option>
+                  <option selected>k円</option>
                   <option>枚</option>
                   <option>玉</option>
                 </select>

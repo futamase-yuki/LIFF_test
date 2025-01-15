@@ -49,17 +49,17 @@ function App() {
             <p>機種</p>
             <div class="form-row">
               <div class="form-group col-8">
-                <input class="form-control mt-0" name="machine" placeholder="" onChange={handleInputChange}/>
+                <input class="form-control mt-0" type="text" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
             </div>
 
             <p class="mt-0">投資</p>
             <div class="form-row">
               <div class="form-group col-8">
-                  <input class="form-control mt-0" name="toushi" required onChange={handleInputChange}/>
+                  <input class="form-control mt-0" type="number" name="toushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
-                <select id="inputState" class="form-control mt-1">
+                <select id="inputState" class="form-control mt-0">
                   <option selected>円</option>
                   <option>枚</option>
                   <option>玉</option>
@@ -70,7 +70,7 @@ function App() {
             <p class="mt-1">回収</p>
             <div class="form-row">
               <div class="form-group col-8">
-                <input class="form-control mt-1" name="kaisyu" required onChange={handleInputChange}/>
+                <input class="form-control mt-1" type="number" name="kaisyu" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
                 <select id="inputState" class="form-control mt-1">
@@ -81,10 +81,10 @@ function App() {
               </div>
             </div>
 
-            <p class="mt-1">収支</p>
             <div class="form-row">
+              <label>収支</label>
               <div class="form-group col-8">
-                <input class="form-control mt-1" name="syushi" required onChange={handleInputChange}/>
+                <input class="form-control mt-1" type="number" name="syushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
                 <select id="inputState" class="form-control mt-1">

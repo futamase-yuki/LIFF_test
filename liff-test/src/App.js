@@ -11,6 +11,10 @@ function App() {
   const [kaisyu, setKaisyu] = useState('');
   const [syushi, setSyushi] = useState('');
 
+  const [toushiUnit, setToushiUnit] = useState('');
+  const [kaisyuUnit, setKaisyuUnit] = useState('');
+  const [syushiUnit, setSyushiUnit] = useState('');
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === 'machine') {
@@ -24,13 +28,20 @@ function App() {
     }
   };
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries());
+    const obj = JSON.parse(formJson);
+
+    setToushiUnit(obj.toushiUnit);
+  }
+
   function formatResult(result) {
     const isNegative = result < 0;
     const absoluteValue = Math.abs(result);
-    const formattedAbsoluteValue = absoluteValue.toLocaleString('en-US', {
-      minimumIntegerDigits: isNegative ? 5 : 6, // マイナス用には一桁少なくする
-      useGrouping: false,
-    });
+    const formattedAbsoluteValue = absoluteValue.toString().padStart(5, ' '); // スペースで埋める
   
     const formattedResult = isNegative
       ? `-${formattedAbsoluteValue}`
@@ -43,7 +54,7 @@ function App() {
   const modifySendMessage = () => {
     // もし machine が空でないなら、machine の値を含める
     if (machine) {
-      return `機種: ${machine}\n投資:  ${formatResult(toushi)}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
+      return `機種: ${machine}\n投資:  ${formatResult(toushi)}${toushiUnit}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
     }
     else {
       return `投資:  ${formatResult(toushi)}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
@@ -59,7 +70,7 @@ function App() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <section>
             <div class="form-row align-items-center">
               <label class="form-group col-4">機種(任意)</label>
@@ -74,7 +85,7 @@ function App() {
                   <input class="form-control mt-0" type="number" name="toushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-3">
-                <select id="inputState" class="form-control mt-0">
+                <select id="inputState" name="toushiUnit" class="form-control mt-0">
                   <option selected>k円</option>
                   <option>枚</option>
                   <option>玉</option>
@@ -88,7 +99,7 @@ function App() {
                 <input class="form-control mt-1" type="number" name="kaisyu" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-3">
-                <select id="inputState" class="form-control mt-1">
+                <select id="inputState" name="kaisyuUnit" class="form-control mt-1">
                   <option selected>k円</option>
                   <option>枚</option>
                   <option>玉</option>
@@ -102,7 +113,7 @@ function App() {
                 <input class="form-control mt-1" type="number" name="syushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-3">
-                <select id="inputState" class="form-control mt-1">
+                <select id="inputState" name="syushiUnit" class="form-control mt-1">
                   <option selected>k円</option>
                   <option>枚</option>
                   <option>玉</option>

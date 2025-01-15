@@ -103,7 +103,7 @@ function App() {
               </div>
               <div class="form-group col-3">
                 <select id="inputState" class="form-control mt-1">
-                  <option selected>円</option>
+                  <option selected>k円</option>
                   <option>枚</option>
                   <option>玉</option>
                 </select>

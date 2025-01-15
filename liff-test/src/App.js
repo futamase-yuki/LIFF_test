@@ -24,14 +24,29 @@ function App() {
     }
   };
 
+  function formatResult(result) {
+    const isNegative = result < 0;
+    const absoluteValue = Math.abs(result);
+    const formattedAbsoluteValue = absoluteValue.toLocaleString('en-US', {
+      minimumIntegerDigits: isNegative ? 4 : 5, // マイナス用には一桁少なくする
+      useGrouping: false,
+    });
+  
+    const formattedResult = isNegative
+      ? `-${formattedAbsoluteValue}`
+      : ` ${formattedAbsoluteValue}`; // プラスの場合スペースを入れて調整
+  
+    return `${formattedResult}`;
+  }
+
   {/* 取得したProfile profile.displayNameで取得*/}
   const modifySendMessage = () => {
     // もし machine が空でないなら、machine の値を含める
     if (machine) {
-      return `機種: ${machine}\n投資: ${toushi}\n回収: ${kaisyu}\n収支: ${syushi}`;
+      return `機種: ${machine}\n投資:${formatResult(toushi)}\n回収:${formatResult(kaisyu)}\n収支:${formatResult(syushi)}`;
     }
     else {
-      return `投資: ${toushi}\n回収: ${kaisyu}\n収支: ${syushi}`;
+      return `投資: ${formatResult(toushi)}\n回収: ${formatResult(kaisyu)}\n収支: ${formatResult(syushi)}`;
     }
   }
 
@@ -53,12 +68,12 @@ function App() {
               </div>
             </div>
 
-            <p class="mt-0">投資</p>
-            <div class="form-row">
-              <div class="form-group col-8">
+            <div class="form-row align-items-center">
+              <label class="form-group col-2">投資</label>
+              <div class="form-group col-7">
                   <input class="form-control mt-0" type="number" name="toushi" required onChange={handleInputChange}/>
               </div>
-              <div class="form-group col-4">
+              <div class="form-group col-3">
                 <select id="inputState" class="form-control mt-0">
                   <option selected>円</option>
                   <option>枚</option>
@@ -67,12 +82,12 @@ function App() {
               </div>
             </div>
 
-            <p class="mt-1">回収</p>
-            <div class="form-row">
-              <div class="form-group col-8">
+            <div class="form-row align-items-center">
+              <label class="form-group col-2">回収</label>
+              <div class="form-group col-7">
                 <input class="form-control mt-1" type="number" name="kaisyu" required onChange={handleInputChange}/>
               </div>
-              <div class="form-group col-4">
+              <div class="form-group col-3">
                 <select id="inputState" class="form-control mt-1">
                   <option selected>円</option>
                   <option>枚</option>

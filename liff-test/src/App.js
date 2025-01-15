@@ -46,7 +46,7 @@ function App() {
   return (
     <div>
       <section>
-            <p class="mt-1">機種</p>
+            <p>機種</p>
             <div class="form-row">
               <div class="form-group col-8">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>

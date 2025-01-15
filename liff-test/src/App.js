@@ -53,7 +53,7 @@ function App() {
               </div>
             </div>
 
-            <p class="mt-1">投資</p>
+            <p class="mt-0">投資</p>
             <div class="form-row">
               <div class="form-group col-8">
                   <input class="form-control mt-0" name="toushi" required onChange={handleInputChange}/>

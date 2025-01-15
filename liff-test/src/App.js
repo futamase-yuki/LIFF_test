@@ -24,6 +24,7 @@ function App() {
     }
   };
 
+  {/* 取得したProfile profile.displayNameで取得*/}
   const modifySendMessage = () => {
     // もし machine が空でないなら、machine の値を含める
     if (machine) {
@@ -46,8 +47,7 @@ function App() {
     <div>
       {/* 追加 */}
       <section>
-        {/* ボタンをクリックしたらfetchProfileを実行 */}
-            <p class="mt-3">機種</p>
+            {/* <p class="mt-3">機種</p>
             <div class="form-row">
               <div class="form-group col-2">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
@@ -59,7 +59,7 @@ function App() {
                   <option>玉</option>
                 </select>
               </div>
-            </div>
+            </div> */}
             <p class="mt-3">投資</p>
             <div>
                 <input class="form-control w-100 mt-1" name="toushi" required onChange={handleInputChange}/>
@@ -74,7 +74,6 @@ function App() {
             </div>
             <p></p>
             <button type="submit" class="btn btn-primary" onClick={() => onClickSubmitButton() }>投稿</button>
-        {/* 取得したProfileを表示 profile.displayNameで取得*/}
       </section>
     </div>
   );

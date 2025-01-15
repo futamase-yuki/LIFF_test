@@ -10,7 +10,8 @@ function useLiff({ liffId }) {
     setLoading(true);
     try {
       // LIFF APIのinitを呼び出して初期化
-      liff.init({ liffId });
+      await liff.init({ liffId });
+      alert('LIFF initialized');
     } catch (error) {
       alert({ error });
       setError(error);

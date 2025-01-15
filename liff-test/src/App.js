@@ -49,10 +49,10 @@ function App() {
         {/* ボタンをクリックしたらfetchProfileを実行 */}
             <p class="mt-3">機種</p>
             <div class="form-row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-2">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
-              <div class="form-group col-md-2">
+              <div class="form-group col-md-1">
                 <select id="inputState" class="form-control">
                   <option selected>円</option>
                   <option>枚</option>

@@ -46,16 +46,16 @@ function App() {
   return (
     <div>
       <section>
-            <p class="mt-2">機種</p>
+            <p class="mt-1">機種</p>
             <div class="form-row">
               <div class="form-group col-8">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
             </div>
 
-            <p class="mt-2">投資</p>
+            <p class="mt-1">投資</p>
             <div class="form-row">
-              <div class="form-group col-6">
+              <div class="form-group col-8">
                   <input class="form-control mt-1" name="toushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
@@ -67,10 +67,10 @@ function App() {
               </div>
             </div>
 
-            <p class="mt-2">回収</p>
+            <p class="mt-1">回収</p>
             <div class="form-row">
-              <div class="form-group col-6">
-                <input class="form-control w-100 mt-1" name="kaisyu" required onChange={handleInputChange}/>
+              <div class="form-group col-8">
+                <input class="form-control mt-1" name="kaisyu" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
                 <select id="inputState" class="form-control mt-1">
@@ -81,10 +81,10 @@ function App() {
               </div>
             </div>
 
-            <p class="mt-2">収支</p>
+            <p class="mt-1">収支</p>
             <div class="form-row">
-              <div class="form-group col-6">
-                <input class="form-control w-100 mt-1" name="syushi" required onChange={handleInputChange}/>
+              <div class="form-group col-8">
+                <input class="form-control mt-1" name="syushi" required onChange={handleInputChange}/>
               </div>
               <div class="form-group col-4">
                 <select id="inputState" class="form-control mt-1">

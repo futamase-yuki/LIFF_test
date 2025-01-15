@@ -46,12 +46,19 @@ function App() {
   return (
     <div>
       <section>
-            <p class="mt-3">機種</p>
+            <p class="mt-2">機種</p>
             <div class="form-row">
-              <div class="form-group col-6">
+              <div class="form-group col-8">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
               </div>
-              <div class="form-group col-2">
+            </div>
+
+            <p class="mt-2">投資</p>
+            <div class="form-row">
+              <div class="form-group col-6">
+                  <input class="form-control mt-1" name="toushi" required onChange={handleInputChange}/>
+              </div>
+              <div class="form-group col-4">
                 <select id="inputState" class="form-control mt-1">
                   <option selected>円</option>
                   <option>枚</option>
@@ -59,20 +66,35 @@ function App() {
                 </select>
               </div>
             </div>
-            <p class="mt-3">投資</p>
+
+            <p class="mt-2">回収</p>
             <div class="form-row">
               <div class="form-group col-6">
-                  <input class="form-control mt-1" name="toushi" required onChange={handleInputChange}/>
+                <input class="form-control w-100 mt-1" name="kaisyu" required onChange={handleInputChange}/>
+              </div>
+              <div class="form-group col-4">
+                <select id="inputState" class="form-control mt-1">
+                  <option selected>円</option>
+                  <option>枚</option>
+                  <option>玉</option>
+                </select>
               </div>
             </div>
-            {/* <p class="mt-3">回収</p>
-            <div>
-                <input class="form-control w-100 mt-1" name="kaisyu" required onChange={handleInputChange}/>
-            </div>
-            <p class="mt-3">収支</p>
-            <div>
+
+            <p class="mt-2">収支</p>
+            <div class="form-row">
+              <div class="form-group col-6">
                 <input class="form-control w-100 mt-1" name="syushi" required onChange={handleInputChange}/>
-            </div> */}
+              </div>
+              <div class="form-group col-4">
+                <select id="inputState" class="form-control mt-1">
+                  <option selected>円</option>
+                  <option>枚</option>
+                  <option>玉</option>
+                </select>
+              </div>
+            </div>
+
             <p></p>
             <button type="submit" class="btn btn-primary pull-right" onClick={() => onClickSubmitButton() }>投稿</button>
       </section>

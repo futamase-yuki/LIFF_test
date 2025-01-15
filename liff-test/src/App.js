@@ -45,9 +45,8 @@ function App() {
 
   return (
     <div>
-      {/* 追加 */}
       <section>
-            {/* <p class="mt-3">機種</p>
+            <p class="mt-3">機種</p>
             <div class="form-row">
               <div class="form-group col-2">
                 <input class="form-control mt-1" name="machine" placeholder="" onChange={handleInputChange}/>
@@ -59,8 +58,8 @@ function App() {
                   <option>玉</option>
                 </select>
               </div>
-            </div> */}
-            <p class="mt-3">投資</p>
+            </div>
+            {/* <p class="mt-3">投資</p>
             <div>
                 <input class="form-control w-100 mt-1" name="toushi" required onChange={handleInputChange}/>
             </div>
@@ -71,9 +70,9 @@ function App() {
             <p class="mt-3">収支</p>
             <div>
                 <input class="form-control w-100 mt-1" name="syushi" required onChange={handleInputChange}/>
-            </div>
+            </div> */}
             <p></p>
-            <button type="submit" class="btn btn-primary" onClick={() => onClickSubmitButton() }>投稿</button>
+            <button type="submit" class="btn btn-primary pull-right" onClick={() => onClickSubmitButton() }>投稿</button>
       </section>
     </div>
   );

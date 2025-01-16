@@ -122,7 +122,7 @@ function App() {
         </div>
       </div>
 
-      <p></p>
+      <p>{toushiUnit}</p>
       <button type="submit" class="btn btn-primary pull-right" onClick={onClickSubmitButton}>投稿</button>
     </form>
   );

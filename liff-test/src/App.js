@@ -64,7 +64,6 @@ function App() {
   }
 
   const onClickSubmitButton = async () => {
-    handleSubmit();
     await sendMessage({ text: modifySendMessage() });
     exitLiff();
   }

@@ -73,8 +73,7 @@ function App() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    // <form method="post" onSubmit={handleSubmit}>
-    <section>
+    <form>
       <div class="form-row align-items-center">
         <label class="form-group col-4">機種(任意)</label>
         <div class="form-group col-8">
@@ -88,7 +87,7 @@ function App() {
             <input class="form-control mt-0" type="number" name="toushi" required onChange={handleInputChange}/>
         </div>
         <div class="form-group col-3">
-          <select id="inputState" name="toushiUnit" class="form-control mt-0">
+          <select id="inputState" name="toushiUnit" class="form-control mt-0" onChange={(e) => setToushiUnit(e.target.value)}>
             <option selected>k円</option>
             <option>枚</option>
             <option>玉</option>
@@ -124,11 +123,9 @@ function App() {
         </div>
       </div>
 
-      <form method="post" onSubmit={handleSubmit}>
-        <p></p>
-        <button type="submit" class="btn btn-primary pull-right">投稿</button>
-      </form>
-    </section>
+      <p></p>
+      <button type="submit" class="btn btn-primary pull-right" onClick={onClickSubmitButton}>投稿</button>
+    </form>
   );
 }
 

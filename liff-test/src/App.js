@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useLiff from './hooks/useLiff';
 
-// LIFF IDを設定(後述)
+// LIFF IDを設定
 const liffId = '2006770067-9yLG6E0P';
 
 function App() {
@@ -11,9 +11,9 @@ function App() {
   const [kaisyu, setKaisyu] = useState('');
   const [syushi, setSyushi] = useState('');
 
-  const [toushiUnit, setToushiUnit] = useState('hoge');
-  const [kaisyuUnit, setKaisyuUnit] = useState('');
-  const [syushiUnit, setSyushiUnit] = useState('');
+  const [toushiUnit, setToushiUnit] = useState('k円');
+  const [kaisyuUnit, setKaisyuUnit] = useState('k円');
+  const [syushiUnit, setSyushiUnit] = useState('k円');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,18 +27,6 @@ function App() {
       setSyushi(value);
     }
   };
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const formData = new FormData(form);
-    const formJson = Object.fromEntries(formData.entries());
-    const obj = JSON.parse(formJson);
-
-    setToushiUnit(obj.toushiUnit);
-
-    onClickSubmitButton();
-  }
 
   function formatResult(result) {
     const isNegative = result < 0;
@@ -56,7 +44,7 @@ function App() {
   const modifySendMessage = () => {
     // もし machine が空でないなら、machine の値を含める
     if (machine) {
-      return `機種: ${machine}\n投資:  ${formatResult(toushi)}${toushiUnit}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
+      return `機種:\t${machine}\n投資:\t${formatResult(toushi)}${toushiUnit}\n回収:\t${formatResult(kaisyu)}${kaisyuUnit}\n収支:  ${formatResult(syushi)}`;
     }
     else {
       return `投資:  ${formatResult(toushi)}\n回収:  ${formatResult(kaisyu)}\n収支:  ${formatResult(syushi)}`;
@@ -78,6 +66,15 @@ function App() {
         <div class="form-group col-8">
           <input class="form-control mt-0" type="text" name="machine" placeholder="" onChange={handleInputChange}/>
         </div>
+      </div>
+
+      <div class="form-row align-items-center">
+        <label class="form-group col-2">単位</label>
+        <select id="inputState" name="unit" class="form-control mt-0">
+          <option selected>k円</option>
+          <option>枚</option>
+          <option>玉</option>
+        </select>
       </div>
 
       <div class="form-row align-items-center">
@@ -122,7 +119,7 @@ function App() {
         </div>
       </div>
 
-      <p>{toushiUnit}</p>
+      <p></p>
       <button type="submit" class="btn btn-primary pull-right" onClick={onClickSubmitButton}>投稿</button>
     </form>
   );

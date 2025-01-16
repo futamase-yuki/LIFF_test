@@ -10,6 +10,7 @@ function App() {
   const [toushi, setToushi] = useState('');
   const [kaisyu, setKaisyu] = useState('');
   const [syushi, setSyushi] = useState('');
+  const [isSyushiEditable, setIsSyushiEditable] = useState(false);
 
   const [unit, setUnit] = useState('k円');
 
@@ -30,6 +31,10 @@ function App() {
       setSyushi(value);
     }
   };
+
+  const handleSyushiEditable = () => {
+    setIsSyushiEditable(!isSyushiEditable);
+  }
 
   function formatResult(result) {
     const isNegative = result < 0;
@@ -97,9 +102,12 @@ function App() {
       </div>
 
       <div class="form-row align-items-center">
-        <label class="form-group col-5">収支</label>
+        <label class="form-group col-4">収支</label>
+        <div class="form-group col-1">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" onClick={handleSyushiEditable()}/>
+        </div>
         <div class="form-group col-7">
-          <input class="form-control mt-1" type="number" name="syushi" required onChange={handleInputChange}/>
+          <input class="form-control mt-1" type="number" name="syushi" value={syushi} readonly={!isSyushiEditable} onChange={handleInputChange}/>
         </div>
       </div>
 

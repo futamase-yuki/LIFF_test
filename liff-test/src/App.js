@@ -73,60 +73,58 @@ function App() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <form>
-      <section>
-            <div class="form-row align-items-center">
-              <label class="form-group col-4">機種(任意)</label>
-              <div class="form-group col-8">
-                <input class="form-control mt-0" type="text" name="machine" placeholder="" onChange={handleInputChange}/>
-              </div>
-            </div>
+    <form onSubmit={handleSubmit}>
+      <div class="form-row align-items-center">
+        <label class="form-group col-4">機種(任意)</label>
+        <div class="form-group col-8">
+          <input class="form-control mt-0" type="text" name="machine" placeholder="" onChange={handleInputChange}/>
+        </div>
+      </div>
 
-            <div class="form-row align-items-center">
-              <label class="form-group col-2">投資</label>
-              <div class="form-group col-7">
-                  <input class="form-control mt-0" type="number" name="toushi" required onChange={handleInputChange}/>
-              </div>
-              <div class="form-group col-3">
-                <select id="inputState" name="toushiUnit" class="form-control mt-0">
-                  <option selected>k円</option>
-                  <option>枚</option>
-                  <option>玉</option>
-                </select>
-              </div>
-            </div>
+      <div class="form-row align-items-center">
+        <label class="form-group col-2">投資</label>
+        <div class="form-group col-7">
+            <input class="form-control mt-0" type="number" name="toushi" required onChange={handleInputChange}/>
+        </div>
+        <div class="form-group col-3">
+          <select id="inputState" name="toushiUnit" class="form-control mt-0">
+            <option selected>k円</option>
+            <option>枚</option>
+            <option>玉</option>
+          </select>
+        </div>
+      </div>
 
-            <div class="form-row align-items-center">
-              <label class="form-group col-2">回収</label>
-              <div class="form-group col-7">
-                <input class="form-control mt-1" type="number" name="kaisyu" required onChange={handleInputChange}/>
-              </div>
-              <div class="form-group col-3">
-                <select id="inputState" name="kaisyuUnit" class="form-control mt-1">
-                  <option selected>k円</option>
-                  <option>枚</option>
-                  <option>玉</option>
-                </select>
-              </div>
-            </div>
+      <div class="form-row align-items-center">
+        <label class="form-group col-2">回収</label>
+        <div class="form-group col-7">
+          <input class="form-control mt-1" type="number" name="kaisyu" required onChange={handleInputChange}/>
+        </div>
+        <div class="form-group col-3">
+          <select id="inputState" name="kaisyuUnit" class="form-control mt-1">
+            <option selected>k円</option>
+            <option>枚</option>
+            <option>玉</option>
+          </select>
+        </div>
+      </div>
 
-            <div class="form-row align-items-center">
-              <label class="form-group col-2">収支</label>
-              <div class="form-group col-7">
-                <input class="form-control mt-1" type="number" name="syushi" required onChange={handleInputChange}/>
-              </div>
-              <div class="form-group col-3">
-                <select id="inputState" name="syushiUnit" class="form-control mt-1">
-                  <option selected>k円</option>
-                  <option>枚</option>
-                  <option>玉</option>
-                </select>
-              </div>
-            </div>
+      <div class="form-row align-items-center">
+        <label class="form-group col-2">収支</label>
+        <div class="form-group col-7">
+          <input class="form-control mt-1" type="number" name="syushi" required onChange={handleInputChange}/>
+        </div>
+        <div class="form-group col-3">
+          <select id="inputState" name="syushiUnit" class="form-control mt-1">
+            <option selected>k円</option>
+            <option>枚</option>
+            <option>玉</option>
+          </select>
+        </div>
+      </div>
 
-            <p></p>
-            <button type="submit" class="btn btn-primary pull-right" >投稿</button>
-      </section>
+      <p></p>
+      <button type="submit" class="btn btn-primary pull-right" >投稿</button>
     </form>
   );
 }

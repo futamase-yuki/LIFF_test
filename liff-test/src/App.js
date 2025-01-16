@@ -73,7 +73,7 @@ function App() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form method="post" onSubmit={handleSubmit}>
       <div class="form-row align-items-center">
         <label class="form-group col-4">機種(任意)</label>
         <div class="form-group col-8">

@@ -70,11 +70,13 @@ function App() {
 
       <div class="form-row align-items-center">
         <label class="form-group col-2">単位</label>
-        <select id="inputState" name="unit" class="form-control mt-0 col-3 pull-right">
-          <option selected>k円</option>
-          <option>枚</option>
-          <option>玉</option>
-        </select>
+        <div class="form-group col-3 pull-right">
+          <select id="inputState" name="unit" class="form-control mt-0">
+            <option selected>k円</option>
+            <option>枚</option>
+            <option>玉</option>
+          </select>
+        </div>
       </div>
 
       <div class="form-row align-items-center">

@@ -102,10 +102,10 @@ function App() {
       </div>
 
       <div class="form-row align-items-center">
-        <label class="form-group col-4">収支</label>
-        {/* <div class="form-group col-1">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1" onClick={handleSyushiEditable()}/>
-        </div> */}
+        <label class="form-group col-2">収支</label>
+        <div class="form-group col-3">
+          <input type="checkbox" class="form-check-input" id="check1" onClick={handleSyushiEditable()}/>
+        </div>
         <div class="form-group col-7">
           <input class="form-control mt-1" type="number" name="syushi" value={syushi} readonly={!isSyushiEditable} onChange={handleInputChange}/>
         </div>

@@ -11,7 +11,7 @@ function App() {
   const [kaisyu, setKaisyu] = useState('');
   const [syushi, setSyushi] = useState('');
 
-  const [toushiUnit, setToushiUnit] = useState('');
+  const [toushiUnit, setToushiUnit] = useState('hoge');
   const [kaisyuUnit, setKaisyuUnit] = useState('');
   const [syushiUnit, setSyushiUnit] = useState('');
 

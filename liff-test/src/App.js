@@ -69,7 +69,7 @@ function App() {
       </div>
 
       <div class="form-row align-items-center">
-        <label class="form-group col-2">単位</label>
+        <label class="form-group col-9">単位</label>
         <div class="form-group col-3 pull-right">
           <select id="inputState" name="unit" class="form-control mt-0">
             <option selected>k円</option>

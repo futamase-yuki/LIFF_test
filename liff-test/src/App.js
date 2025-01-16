@@ -36,6 +36,8 @@ function App() {
     const obj = JSON.parse(formJson);
 
     setToushiUnit(obj.toushiUnit);
+
+    onClickSubmitButton();
   }
 
   function formatResult(result) {
@@ -62,6 +64,7 @@ function App() {
   }
 
   const onClickSubmitButton = async () => {
+    handleSubmit();
     await sendMessage({ text: modifySendMessage() });
     exitLiff();
   }
@@ -70,7 +73,7 @@ function App() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
       <section>
             <div class="form-row align-items-center">
               <label class="form-group col-4">機種(任意)</label>
@@ -122,7 +125,7 @@ function App() {
             </div>
 
             <p></p>
-            <button type="submit" class="btn btn-primary pull-right" onClick={() => onClickSubmitButton() }>投稿</button>
+            <button type="submit" class="btn btn-primary pull-right" >投稿</button>
       </section>
     </form>
   );

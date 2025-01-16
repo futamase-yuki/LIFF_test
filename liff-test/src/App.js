@@ -73,7 +73,8 @@ function App() {
   if (error) return <p>{error.message}</p>;
 
   return (
-    <form method="post" onSubmit={handleSubmit}>
+    // <form method="post" onSubmit={handleSubmit}>
+    <section>
       <div class="form-row align-items-center">
         <label class="form-group col-4">機種(任意)</label>
         <div class="form-group col-8">
@@ -123,9 +124,11 @@ function App() {
         </div>
       </div>
 
-      <p></p>
-      <button type="submit" class="btn btn-primary pull-right" >投稿</button>
-    </form>
+      <form method="post" onSubmit={handleSubmit}>
+        <p></p>
+        <button type="submit" class="btn btn-primary pull-right">投稿</button>
+      </form>
+    </section>
   );
 }
 
